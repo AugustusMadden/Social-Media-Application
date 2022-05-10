@@ -17,7 +17,12 @@ const userSchema = new Schema(
             type: String,
             required: true,
             unique: true,
-            validate: [validEmail, 'Enter a valid email address'],
+            validate: {
+                validator: function(email) {
+                    return /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/.test(email);
+                  },
+                  message: email => `${email.value} is not a valid phone number!`
+                },
         },
         thoughts: [
             {

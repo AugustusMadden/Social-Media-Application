@@ -20,7 +20,7 @@ module.exports = {
         Thought.create(req.body)
             .then((thought) => {
                 return User.findOneAndUpdate(
-                    { _id: req.body.userId },
+                    { username: req.body.username  },
                     { $addToSet: { thoughts: thought._id } },
                     { new: true }
                 );
@@ -60,7 +60,7 @@ module.exports = {
             )
             .then((user) => 
                 !user
-                    ? res.status(404).json({ message: 'No user with this id!' })
+                    ? res.status(404).json({ message: 'No user associated with this thought.' })
                     : res.json({ message: 'Thought successfully unthunk.' })
             )
             .catch((err) => res.status(500).json(err));      
@@ -81,13 +81,14 @@ module.exports = {
     deleteReaction(req, res) {
         Thought.findOneAndUpdate(
             { _id: req.params.thoughtId },
-            { $pull: { reactionId: req.params.reactionId } },
+            { $pull: { reactions: { _id: req.params.reactionId} } },
             { runValidators: true, new: true }
         )
             .then((thought) =>
                 !thought
                     ? res.status(404).json({ message: 'No thought with this id!' })
-                    : res.json({ message: 'Your reaction has been unrecorded.' })
+                    : res.json(thought) 
+                        
             )
             .catch((err) => res.status(500).json(err));
     },
