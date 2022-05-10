@@ -19,7 +19,7 @@
 
   
   ## Usage
-  Activate via your preferred terminal or gitbash. Navigate to the file directory the software has been stored on locally, and initiate with the functions 'npm i', followed by "nodemon index.js". Click on [this link](https://drive.google.com/file/d/1tbd3Ez0DwPcp14_eRqMpKAtkjbOoC8nP/view) to view a video walkthrough of the process.
+  Activate via your preferred terminal or gitbash. Navigate to the file directory the software has been stored on locally, and initiate with the functions 'npm i', followed by "nodemon index.js".
 
     
   ## Credits
