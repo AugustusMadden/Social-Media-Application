@@ -1,7 +1,7 @@
 # Social-Media-Application
 
   ## Description
-  This repository contains software for running a command-line based content management system. The system was designed to access and create information for a multi-department company.
+  This repository contains software for running a social media application utilizing Mongo as the foundation for the database management system. Desgined to simulate a text-based API where posts are listed as "Thoughts" and comments as "Reactions", with each element being ascribed to Users that can register other Users as friends.
   
   ## Table of Contents
   - [Installation](#installation)
@@ -20,7 +20,7 @@
   
   ## Usage
   Activate via your preferred terminal or gitbash. Navigate to the file directory the software has been stored on locally, and initiate with the functions 'npm i', followed by "nodemon index.js". Click on [this link](https://drive.google.com/file/d/1tbd3Ez0DwPcp14_eRqMpKAtkjbOoC8nP/view) to view a video walkthrough of the process.
-  
+
     
   ## Credits
     Thanks to MDN and W3 for support documentation.
